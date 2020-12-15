@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "d99b15e6-aafc-485e-a13d-a567ff2d82de",
+		"name": "Zoho",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create an entry in zoho for a new Customer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Zoho-oauthtoken 1000.f75f19ecf7372b654da418fb315eecb1.581512d02c8805417c41ee396159909a",
+						"type": "text"
+					},
+					{
+						"key": "X-com-zoho-subscriptions-organizationid",
+						"value": "733181721",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"display_name\": \"Bowman Furniture\",\r\n    \"email\": \"benjamin.george@bowmanfurniture.com\"\r\n   \r\n    \r\n}"
+				},
+				"url": {
+					"raw": "https://subscriptions.zoho.com/api/v1/customers",
+					"protocol": "https",
+					"host": [
+						"subscriptions",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm the new Customer is add to the existing customer list.",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Zoho-oauthtoken 1000.f75f19ecf7372b654da418fb315eecb1.581512d02c8805417c41ee396159909a",
+						"type": "text"
+					},
+					{
+						"key": "X-com-zoho-subscriptions-organizationid",
+						"value": "733181721",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://subscriptions.zoho.com/api/v1/customers",
+					"protocol": "https",
+					"host": [
+						"subscriptions",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the shipping address, Contact details of the Customer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Zoho-oauthtoken 1000.f75f19ecf7372b654da418fb315eecb1.581512d02c8805417c41ee396159909a"
+					},
+					{
+						"key": "X-com-zoho-subscriptions-organizationid",
+						"type": "text",
+						"value": "733181721"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json;charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"display_name\": \"Bowman Furniture\",\r\n    \"salutation\": \"Mr.\",\r\n    \"first_name\": \"Benjamin\",\r\n    \"last_name\": \"George\",\r\n    \"email\": \"benjamin.george@bowmanfurniture.com\",\r\n    \"company_name\": \"Bowman Furniture\",\r\n    \"phone\": 23467278,\r\n    \"mobile\": 938237475,\r\n    \"billing_address\": {\r\n        \"attention\": \"Benjamin George\",\r\n        \"street\": \"Harrington Bay Street\",\r\n        \"city\": \"Salt Lake City\",\r\n        \"state\": \"CA\",\r\n        \"zip\": 92612,\r\n        \"country\": \"U.S.A\",\r\n        \"fax\": 4527389\r\n    },\r\n    \"shipping_address\": {\r\n        \"attention\": \"Benjamin George\",\r\n        \"street\": \"Eldams Road\",\r\n        \"city\": \"Salt Lake City\",\r\n        \"state\": \"LA\",\r\n        \"zip\": 92612,\r\n        \"country\": \"U.S.A\",\r\n        \"fax\": 4527389\r\n    }\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "https://subscriptions.zoho.com/api/v1/customers/2488489000000073019",
+					"protocol": "https",
+					"host": [
+						"subscriptions",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"2488489000000073019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove an existing customer from the list and confirm it",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Zoho-oauthtoken 1000.f75f19ecf7372b654da418fb315eecb1.581512d02c8805417c41ee396159909a"
+					},
+					{
+						"key": "X-com-zoho-subscriptions-organizationid",
+						"type": "text",
+						"value": "733181721"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json;charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"display_name\": \"Bowman Furniture\",\r\n    \"salutation\": \"Mr.\",\r\n    \"first_name\": \"Benjamin\",\r\n    \"last_name\": \"George\",\r\n    \"email\": \"benjamin.george@bowmanfurniture.com\",\r\n    \"company_name\": \"Bowman Furniture\",\r\n    \"phone\": 23467278,\r\n    \"mobile\": 938237475,\r\n    \"billing_address\": {\r\n        \"attention\": \"Benjamin George\",\r\n        \"street\": \"Harrington Bay Street\",\r\n        \"city\": \"Salt Lake City\",\r\n        \"state\": \"CA\",\r\n        \"zip\": 92612,\r\n        \"country\": \"U.S.A\",\r\n        \"fax\": 4527389\r\n    },\r\n    \"shipping_address\": {\r\n        \"attention\": \"Benjamin George\",\r\n        \"street\": \"Harrington Bay Street\",\r\n        \"city\": \"Salt Lake City\",\r\n        \"state\": \"CA\",\r\n        \"zip\": 92612,\r\n        \"country\": \"U.S.A\",\r\n        \"fax\": 4527389\r\n    }\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "https://subscriptions.zoho.com/api/v1/customers/2488489000000073002",
+					"protocol": "https",
+					"host": [
+						"subscriptions",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers",
+						"2488489000000073002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm it delete customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Zoho-oauthtoken 1000.f75f19ecf7372b654da418fb315eecb1.581512d02c8805417c41ee396159909a",
+						"type": "text"
+					},
+					{
+						"key": "X-com-zoho-subscriptions-organizationid",
+						"value": "733181721",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://subscriptions.zoho.com/api/v1/customers",
+					"protocol": "https",
+					"host": [
+						"subscriptions",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientId",
+				"value": "1000.4VZYCU06DRHO69WOO023PJQXQ1MLJP",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "ZohoSubscriptions.fullaccess.all",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "2f962f5b9ae1f64ce8623190a7cf5f3ae0df38b305",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://accounts.zoho.com/oauth/v2/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://accounts.zoho.com/oauth/v2/auth?access_type=offline&prompt=consent",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://www.getpostman.com/oauth2/callback",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "zoho",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "queryParams",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9e765db9-9a2d-478b-b80f-a5737a1945b3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ba49bc96-e0a1-4846-86a6-6d021c39101b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
